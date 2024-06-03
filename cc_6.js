@@ -33,3 +33,15 @@ class Ball {
     }
 }
 
+const canvas = document.getElementById("ballAnimation");
+const context = canvas.getContext("2d");
+
+const ball = new Ball (200, 160, 20 , 2, 2, "red");
+
+function animate() {
+    context.clearRect(0, 0, canvas.wdith, canvas.height);
+    ball.draw(context);
+    ball.update(canvas);
+}
+
+setInterval(animate, 10);
